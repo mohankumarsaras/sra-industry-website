@@ -15,9 +15,9 @@ export default function CompanyIntroSection() {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-16 sm:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Real Catalogue Visual Panel */}
           <motion.div
@@ -25,14 +25,14 @@ export default function CompanyIntroSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-6 relative"
+            className="lg:col-span-6 relative w-full"
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="rounded-2xl overflow-hidden border border-sky-200 shadow-[0_8px_20px_-3px_rgba(14,165,233,0.2)] bg-white">
                 <img
                   src="/catalogue/image5.jpg"
                   alt="Gear assembly close-up view SRA Industries"
-                  className="w-full h-48 object-cover"
+                  className="w-full h-44 sm:h-48 object-cover"
                 />
                 <div className="p-3 bg-white text-xs font-black text-black text-center font-mono border-t border-sky-100">
                   Gear Assembly – Close-Up
@@ -42,17 +42,17 @@ export default function CompanyIntroSection() {
                 <img
                   src="/catalogue/image6.jpg"
                   alt="Gear assembly overall view SRA Industries"
-                  className="w-full h-48 object-cover"
+                  className="w-full h-44 sm:h-48 object-cover"
                 />
                 <div className="p-3 bg-white text-xs font-black text-black text-center font-mono border-t border-sky-100">
                   Gear Assembly – Overall View
                 </div>
               </div>
-              <div className="col-span-2 rounded-2xl overflow-hidden border border-sky-200 shadow-[0_12px_24px_-4px_rgba(14,165,233,0.25)] bg-white">
+              <div className="col-span-1 sm:col-span-2 rounded-2xl overflow-hidden border border-sky-200 shadow-[0_12px_24px_-4px_rgba(14,165,233,0.25)] bg-white">
                 <img
                   src="/catalogue/image7.jpg"
                   alt="Machined mill housing component SRA Industries"
-                  className="w-full h-52 object-cover"
+                  className="w-full h-48 sm:h-52 object-cover"
                 />
                 <div className="p-3 bg-white text-xs font-black text-black text-center font-mono border-t border-sky-100">
                   Machined Mill Housing / Component
@@ -67,33 +67,33 @@ export default function CompanyIntroSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-6 space-y-6"
+            className="lg:col-span-6 space-y-5 sm:space-y-6 text-center sm:text-left"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-sky-300 text-black text-xs font-extrabold uppercase tracking-wider shadow-[0_4px_12px_rgba(56,189,248,0.2)]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-sky-300 text-black text-xs font-extrabold uppercase tracking-wider shadow-[0_4px_12px_rgba(56,189,248,0.2)] mx-auto sm:mx-0">
               <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse" />
               About SRA Industries
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-black tracking-tight leading-tight font-heading">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-black tracking-tight leading-tight font-heading">
               Industrial Mineral Grinding Solutions
             </h2>
 
-            <p className="text-black text-base sm:text-lg leading-relaxed font-normal">
+            <p className="text-black text-sm sm:text-base lg:text-lg leading-relaxed font-normal">
               {companyDetails.description}
             </p>
 
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3 pt-2 text-left">
               {highlights.map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-sky-500 shrink-0 mt-0.5" />
-                  <span className="text-sm text-black font-semibold">{item}</span>
+                  <span className="text-xs sm:text-sm text-black font-semibold">{item}</span>
                 </div>
               ))}
             </div>
 
-            <div className="pt-4 flex items-center gap-4">
-              <Link to="/about">
-                <Button variant="primary" icon={ArrowRight}>
+            <div className="pt-4 flex items-center justify-center sm:justify-start">
+              <Link to="/about" className="w-full sm:w-auto">
+                <Button variant="primary" icon={ArrowRight} className="w-full sm:w-auto">
                   Company Profile & Works
                 </Button>
               </Link>

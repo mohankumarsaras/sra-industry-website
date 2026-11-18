@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Phone, Mail, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, ShieldCheck } from 'lucide-react';
 import GlassCard from '../components/common/GlassCard';
 import Button from '../components/common/Button';
 import { companyDetails } from '../data/companyData';
+import { useQuoteModal } from '../context/QuoteModalContext';
 
 export default function ContactCTASection() {
+  const { openQuoteModal } = useQuoteModal();
+
   return (
     <section className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -42,13 +44,16 @@ export default function ContactCTASection() {
             </div>
 
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
-              <Link to="/contact">
-                <Button variant="primary" size="lg" className="w-full" icon={ArrowRight}>
-                  Request Price Quotation
-                </Button>
-              </Link>
+              <Button
+                variant="primary"
+                size="lg"
+                className="w-full"
+                onClick={() => openQuoteModal('BM4')}
+              >
+                Request Price Quotation
+              </Button>
               <a href={`tel:${companyDetails.mobile}`}>
-                <Button variant="secondary" size="lg" className="w-full" icon={Phone}>
+                <Button variant="secondary" size="lg" className="w-full">
                   Call Factory Directly
                 </Button>
               </a>

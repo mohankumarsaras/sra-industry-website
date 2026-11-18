@@ -12,19 +12,19 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           
-          {/* Company Brief with Official Logo */}
+          {/* Company Brief with Primary PNG Logo */}
           <div className="lg:col-span-1 space-y-4">
-            <Link to="/" className="inline-block">
+            <Link to="/" className="inline-block" title="SRA Industries Home">
               <img
-                src="/logo-white.png"
-                alt="SRA Industries Logo - Innovation, Quality, Growth"
+                src="/sra-logo-white-transparent.png"
+                alt="SRA Industries Primary Logo"
                 className="h-12 w-auto object-contain"
               />
             </Link>
             <p className="text-xs text-sky-400 font-mono font-bold uppercase tracking-wider">
               {companyDetails.seriesName} • {companyDetails.tagline}
             </p>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-slate-400 leading-relaxed font-normal">
               {companyDetails.description}
             </p>
             <div className="pt-2">
@@ -45,7 +45,7 @@ export default function Footer() {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="hover:text-sky-300 transition-colors inline-flex items-center gap-2 group"
+                    className="hover:text-sky-300 transition-colors inline-flex items-center gap-2 group font-medium"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-sky-400 transition-colors" />
                     {link.name}

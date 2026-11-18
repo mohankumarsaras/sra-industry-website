@@ -1,0 +1,55 @@
+import React from 'react';
+
+/**
+ * Clean SVG Logo component for SRA
+ * Renders the authentic "SRA" styling with the dynamic swoosh arc
+ * Without any slogans, taglines, or lower text
+ */
+export default function SraLogo({ className = 'h-9 w-auto', variant = 'black' }) {
+  const isWhite = variant === 'white';
+  const textColor = isWhite ? '#ffffff' : '#000000';
+  const arcGradientId = isWhite ? 'sra-arc-white' : 'sra-arc-dark';
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 420 160"
+      className={className}
+      fill="none"
+      role="img"
+      aria-label="SRA Logo"
+    >
+      <defs>
+        <linearGradient id={arcGradientId} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#0284c7" />
+          <stop offset="45%" stopColor="#38bdf8" />
+          <stop offset="100%" stopColor="#eab308" />
+        </linearGradient>
+      </defs>
+
+      {/* S */}
+      <path
+        d="M 120 40 L 38 40 C 22 40 12 50 12 66 C 12 82 24 90 42 90 L 100 90 C 112 90 118 96 118 104 C 118 114 108 120 92 120 L 12 120 L 12 142 L 96 142 C 118 142 138 130 138 106 C 138 88 124 74 102 72 L 46 68 C 34 66 32 60 32 56 C 32 50 38 46 50 46 L 120 46 Z"
+        fill={textColor}
+      />
+
+      {/* R */}
+      <path
+        d="M 148 40 L 220 40 C 246 40 262 54 262 76 C 262 94 250 106 230 110 L 266 142 L 238 142 L 206 112 L 172 112 L 172 142 L 148 142 Z M 172 58 L 172 94 L 216 94 C 230 94 238 88 238 76 C 238 64 230 58 216 58 Z"
+        fill={textColor}
+      />
+
+      {/* A */}
+      <path
+        d="M 334 40 L 364 40 L 412 142 L 386 142 L 374 116 L 322 116 L 310 142 L 284 142 Z M 348 60 L 330 100 L 366 100 Z"
+        fill={textColor}
+      />
+
+      {/* Dynamic Swoosh Arc across the A */}
+      <path
+        d="M 270 128 C 310 110 360 84 416 68 C 382 78 330 102 270 128 Z"
+        fill={`url(#${arcGradientId})`}
+      />
+    </svg>
+  );
+}

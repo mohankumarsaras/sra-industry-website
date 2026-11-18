@@ -5,14 +5,15 @@ import {
   Sliders, 
   FileText 
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { bmSeriesComparison, capacityDisclaimer, catalogueGallery } from '../data/companyData';
 import SectionHeading from '../components/common/SectionHeading';
 import GlassCard from '../components/common/GlassCard';
 import Button from '../components/common/Button';
+import { useQuoteModal } from '../context/QuoteModalContext';
 
 export default function Services() {
   const [selectedModel, setSelectedModel] = useState('all');
+  const { openQuoteModal } = useQuoteModal();
 
   const filteredModels = selectedModel === 'all'
     ? bmSeriesComparison
@@ -108,11 +109,15 @@ export default function Services() {
                 </div>
 
                 <div className="pt-4 border-t border-sky-100 flex flex-col sm:flex-row gap-3">
-                  <Link to="/contact" className="flex-1">
-                    <Button variant="primary" size="md" className="w-full" icon={ArrowRight}>
-                      Inquire Model {item.model}
-                    </Button>
-                  </Link>
+                  <Button
+                    variant="primary"
+                    size="md"
+                    className="w-full"
+                    icon={ArrowRight}
+                    onClick={() => openQuoteModal(item.model)}
+                  >
+                    Inquire Model {item.model}
+                  </Button>
                 </div>
               </GlassCard>
             </motion.div>
@@ -156,11 +161,9 @@ export default function Services() {
 
         {/* CTA */}
         <div className="text-center">
-          <Link to="/contact">
-            <Button variant="primary" size="lg" icon={FileText}>
-              Send Technical Enquiry For Mill Sizing
-            </Button>
-          </Link>
+          <Button variant="primary" size="lg" icon={FileText} onClick={() => openQuoteModal('BM4')}>
+            Send Technical Enquiry For Mill Sizing
+          </Button>
         </div>
 
       </div>

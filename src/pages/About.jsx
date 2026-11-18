@@ -9,8 +9,11 @@ import { companyDetails, catalogueGallery } from '../data/companyData';
 import SectionHeading from '../components/common/SectionHeading';
 import GlassCard from '../components/common/GlassCard';
 import Button from '../components/common/Button';
+import { useQuoteModal } from '../context/QuoteModalContext';
 
 export default function About() {
+  const { openQuoteModal } = useQuoteModal();
+
   return (
     <div className="py-16 sm:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -74,6 +77,7 @@ export default function About() {
             </div>
           </motion.div>
 
+          {/* Official Factory Board Banner */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -84,12 +88,12 @@ export default function About() {
             <GlassCard glow className="p-3 shadow-[0_20px_40px_-5px_rgba(14,165,233,0.25)] border-sky-200">
               <div className="relative rounded-xl overflow-hidden border border-sky-200">
                 <img
-                  src="/catalogue/image3.jpg"
-                  alt="SRA Industries Mineral Grinding Installation"
-                  className="w-full h-80 sm:h-96 object-cover"
+                  src="/sra-factory-board.jpg"
+                  alt="SRA Industries Factory Signboard - Engineering Excellence"
+                  className="w-full h-auto object-cover rounded-lg shadow-sm"
                 />
                 <div className="p-3 bg-white text-xs font-black text-black text-center font-mono border-t border-sky-100">
-                  Mineral Processing Plant Installation Overview
+                  SRA Industries Factory & Works Board
                 </div>
               </div>
             </GlassCard>
@@ -127,13 +131,11 @@ export default function About() {
           </div>
         </div>
 
-        {/* CTA */}
+        {/* CTA with Quote Modal popup trigger */}
         <div className="text-center">
-          <Link to="/contact">
-            <Button variant="primary" size="lg" icon={ArrowRight}>
-              Contact Factory For Quotation
-            </Button>
-          </Link>
+          <Button variant="primary" size="lg" icon={ArrowRight} onClick={() => openQuoteModal('BM4')}>
+            Request Factory Quotation
+          </Button>
         </div>
 
       </div>

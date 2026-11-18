@@ -3,11 +3,13 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, ArrowUpRight } from 'lucide-react';
 import { navigationLinks, companyDetails } from '../data/companyData';
 import Button from '../components/common/Button';
+import { useQuoteModal } from '../context/QuoteModalContext';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { openQuoteModal } = useQuoteModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +25,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-40 transition-all duration-300 ${
         scrolled
           ? 'bg-white/95 backdrop-blur-xl border-b border-sky-200 shadow-[0_4px_20px_rgba(14,165,233,0.15)] py-2.5'
           : 'bg-white/90 backdrop-blur-md border-b border-sky-100 py-3.5'
@@ -32,12 +34,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Official SRA Industries Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          {/* Primary PNG Logo */}
+          <Link to="/" className="flex items-center gap-3 group" title="SRA Industries Home">
             <img
-              src="/logo-black.png"
-              alt="SRA Industries Logo - Innovation, Quality, Growth"
-              className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              src="/sra-logo-black-transparent.png"
+              alt="SRA Industries Primary Logo"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
@@ -60,7 +62,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Contact Direct Call CTA */}
+          {/* Contact Direct Call CTA & Popup Trigger */}
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={`tel:${companyDetails.mobile}`}
@@ -69,11 +71,16 @@ export default function Navbar() {
               <Phone className="w-3.5 h-3.5 text-sky-500" />
               <span>{companyDetails.phoneDisplay}</span>
             </a>
-            <Link to="/contact">
-              <Button size="sm" variant="primary" icon={ArrowUpRight}>
-                Get Quote / RFQ
-              </Button>
-            </Link>
+            
+            {/* Opens Contact Modal Popup */}
+            <Button
+              size="sm"
+              variant="primary"
+              icon={ArrowUpRight}
+              onClick={() => openQuoteModal('BM4')}
+            >
+              Get Quote / RFQ
+            </Button>
           </div>
 
           {/* Mobile Hamburger */}
@@ -96,9 +103,9 @@ export default function Navbar() {
         <div className="md:hidden mt-2 mx-4 p-4 rounded-2xl bg-white border border-sky-200 shadow-2xl space-y-3">
           <div className="pb-2 border-b border-sky-100 flex items-center justify-between">
             <img
-              src="/logo-black.png"
-              alt="SRA Industries Logo"
-              className="h-8 w-auto object-contain"
+              src="/sra-logo-black-transparent.png"
+              alt="SRA Industries Primary Logo"
+              className="h-9 w-auto object-contain"
             />
           </div>
           {navigationLinks.map((link) => (
@@ -124,11 +131,17 @@ export default function Navbar() {
               <Phone className="w-4 h-4 text-sky-500" />
               <span>{companyDetails.phoneDisplay}</span>
             </a>
-            <Link to="/contact">
-              <Button variant="primary" className="w-full" icon={ArrowUpRight}>
-                Get Quote / RFQ
-              </Button>
-            </Link>
+            <Button
+              variant="primary"
+              className="w-full"
+              icon={ArrowUpRight}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openQuoteModal('BM4');
+              }}
+            >
+              Get Quote / RFQ
+            </Button>
           </div>
         </div>
       )}
