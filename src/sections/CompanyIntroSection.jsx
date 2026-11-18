@@ -28,33 +28,33 @@ export default function CompanyIntroSection() {
             className="lg:col-span-6 relative"
           >
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+              <div className="rounded-2xl overflow-hidden border border-sky-200 shadow-[0_8px_20px_-3px_rgba(14,165,233,0.2)] bg-white">
                 <img
                   src="/catalogue/image5.jpg"
                   alt="Gear assembly close-up view SRA Industries"
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-2.5 bg-white text-[11px] font-bold text-slate-800 text-center font-mono border-t border-slate-100">
+                <div className="p-3 bg-white text-xs font-black text-black text-center font-mono border-t border-sky-100">
                   Gear Assembly – Close-Up
                 </div>
               </div>
-              <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+              <div className="rounded-2xl overflow-hidden border border-sky-200 shadow-[0_8px_20px_-3px_rgba(14,165,233,0.2)] bg-white">
                 <img
                   src="/catalogue/image6.jpg"
                   alt="Gear assembly overall view SRA Industries"
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-2.5 bg-white text-[11px] font-bold text-slate-800 text-center font-mono border-t border-slate-100">
+                <div className="p-3 bg-white text-xs font-black text-black text-center font-mono border-t border-sky-100">
                   Gear Assembly – Overall View
                 </div>
               </div>
-              <div className="col-span-2 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+              <div className="col-span-2 rounded-2xl overflow-hidden border border-sky-200 shadow-[0_12px_24px_-4px_rgba(14,165,233,0.25)] bg-white">
                 <img
                   src="/catalogue/image7.jpg"
                   alt="Machined mill housing component SRA Industries"
                   className="w-full h-52 object-cover"
                 />
-                <div className="p-2.5 bg-white text-[11px] font-bold text-slate-800 text-center font-mono border-t border-slate-100">
+                <div className="p-3 bg-white text-xs font-black text-black text-center font-mono border-t border-sky-100">
                   Machined Mill Housing / Component
                 </div>
               </div>
@@ -69,24 +69,24 @@ export default function CompanyIntroSection() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-6 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-slate-300 text-slate-900 text-xs font-bold uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#05d9ff] animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-sky-300 text-black text-xs font-extrabold uppercase tracking-wider shadow-[0_4px_12px_rgba(56,189,248,0.2)]">
+              <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse" />
               About SRA Industries
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight leading-tight font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-black tracking-tight leading-tight font-heading">
               Industrial Mineral Grinding Solutions
             </h2>
 
-            <p className="text-slate-800 text-base sm:text-lg leading-relaxed font-medium">
+            <p className="text-black text-base sm:text-lg leading-relaxed font-normal">
               {companyDetails.description}
             </p>
 
             <div className="space-y-3 pt-2">
               {highlights.map((item) => (
                 <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-800 font-medium">{item}</span>
+                  <CheckCircle2 className="w-5 h-5 text-sky-500 shrink-0 mt-0.5" />
+                  <span className="text-sm text-black font-semibold">{item}</span>
                 </div>
               ))}
             </div>

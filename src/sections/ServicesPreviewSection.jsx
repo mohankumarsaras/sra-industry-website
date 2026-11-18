@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Cog, Gauge, Sliders } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import SectionHeading from '../components/common/SectionHeading';
 import GlassCard from '../components/common/GlassCard';
 import Button from '../components/common/Button';
@@ -32,45 +32,45 @@ export default function ServicesPreviewSection() {
               <GlassCard interactive glow className="h-full flex flex-col justify-between p-6">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-2xl font-extrabold text-slate-950 font-heading">
+                    <span className="text-2xl font-black text-black font-heading">
                       {item.model}
                     </span>
-                    <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-slate-900 text-[#00ffcc]">
+                    <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-sky-100 text-black border border-sky-300">
                       {item.rollerConfiguration}
                     </span>
                   </div>
 
                   <div className="space-y-3 text-xs mb-6">
-                    <div className="flex justify-between border-b border-slate-200/80 pb-1.5">
-                      <span className="text-slate-600 font-medium">Roll Size:</span>
-                      <span className="font-bold text-slate-950 font-mono">{item.rollSize}</span>
+                    <div className="flex justify-between border-b border-sky-100 pb-1.5">
+                      <span className="text-black/70 font-semibold">Roll Size:</span>
+                      <span className="font-bold text-black font-mono">{item.rollSize}</span>
                     </div>
-                    <div className="flex justify-between border-b border-slate-200/80 pb-1.5">
-                      <span className="text-slate-600 font-medium">Bull Ring Size:</span>
-                      <span className="font-bold text-slate-950 font-mono">{item.bullRingSize}</span>
+                    <div className="flex justify-between border-b border-sky-100 pb-1.5">
+                      <span className="text-black/70 font-semibold">Bull Ring Size:</span>
+                      <span className="font-bold text-black font-mono">{item.bullRingSize}</span>
                     </div>
-                    <div className="flex justify-between border-b border-slate-200/80 pb-1.5">
-                      <span className="text-slate-600 font-medium">Application:</span>
-                      <span className="font-bold text-slate-950">{item.application}</span>
+                    <div className="flex justify-between border-b border-sky-100 pb-1.5">
+                      <span className="text-black/70 font-semibold">Application:</span>
+                      <span className="font-bold text-black">{item.application}</span>
                     </div>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm mb-4">
-                    <span className="text-[10px] text-slate-500 font-mono uppercase tracking-wider block mb-1">
+                  <div className="p-3.5 rounded-xl bg-sky-50 border border-sky-200 shadow-sm mb-4">
+                    <span className="text-[10px] text-black/70 font-mono uppercase tracking-wider block mb-1 font-bold">
                       Production Capacity
                     </span>
-                    <span className="text-sm font-extrabold text-slate-950 block font-heading">
+                    <span className="text-sm font-black text-black block font-heading">
                       {item.capacity}
                     </span>
                   </div>
                 </div>
 
                 <div>
-                  <p className="text-[11px] text-slate-600 mb-4 italic">
+                  <p className="text-[11px] text-black/80 mb-4 italic font-medium">
                     {item.popularFor}
                   </p>
                   <Link to="/services">
-                    <Button variant="outline" size="sm" className="w-full">
+                    <Button variant="secondary" size="sm" className="w-full">
                       Full Specs
                       <ArrowRight className="w-3.5 h-3.5 ml-1" />
                     </Button>
@@ -82,8 +82,8 @@ export default function ServicesPreviewSection() {
         </div>
 
         {/* Capacity Disclaimer Note */}
-        <div className="p-4 rounded-xl bg-white/70 border border-slate-200 text-xs text-slate-700 leading-relaxed text-center max-w-4xl mx-auto mb-10 shadow-sm">
-          <span className="font-bold text-slate-900">Note: </span>
+        <div className="p-5 rounded-2xl bg-white border border-sky-200 text-xs text-black leading-relaxed text-center max-w-4xl mx-auto mb-10 shadow-[0_4px_16px_rgba(14,165,233,0.15)] font-medium">
+          <span className="font-extrabold text-black">Note: </span>
           {capacityDisclaimer}
         </div>
 

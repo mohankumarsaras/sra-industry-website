@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { 
   Phone, 
   Mail, 
@@ -7,9 +6,7 @@ import {
   Globe, 
   Send, 
   CheckCircle2, 
-  AlertCircle, 
-  ShieldCheck, 
-  Clock 
+  ShieldCheck 
 } from 'lucide-react';
 import { companyDetails } from '../data/companyData';
 import SectionHeading from '../components/common/SectionHeading';
@@ -82,81 +79,81 @@ export default function Contact() {
           
           {/* Verified Official Contact Card */}
           <div className="lg:col-span-5 space-y-6">
-            <GlassCard glow className="p-8 space-y-6 bg-white/90 border border-slate-300">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 text-[#00ffcc] text-xs font-mono uppercase tracking-wider">
-                <ShieldCheck className="w-3.5 h-3.5" />
+            <GlassCard glow className="p-8 space-y-6 bg-white border border-sky-200 shadow-[0_12px_30px_-3px_rgba(14,165,233,0.2)]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-50 text-black text-xs font-mono font-black uppercase tracking-wider border border-sky-300">
+                <ShieldCheck className="w-3.5 h-3.5 text-sky-500" />
                 Verified Catalogue Details
               </div>
 
-              <h3 className="text-2xl font-bold text-slate-950 font-heading">
+              <h3 className="text-2xl font-bold text-black font-heading">
                 SRA INDUSTRIES
               </h3>
 
-              <div className="space-y-4 text-sm text-slate-700">
+              <div className="space-y-4 text-sm text-black">
                 <div className="flex items-start gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-slate-950 text-[#00ffcc] shrink-0">
+                  <div className="p-2.5 rounded-xl bg-sky-400 text-black shrink-0 shadow-md">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 font-mono block">Direct Mobile / WhatsApp</span>
-                    <a href={`tel:${companyDetails.mobile}`} className="text-base font-bold text-slate-950 hover:text-cyan-700 font-mono">
+                    <span className="text-xs text-black/70 font-mono font-bold block">Direct Mobile / WhatsApp</span>
+                    <a href={`tel:${companyDetails.mobile}`} className="text-base font-black text-black hover:text-sky-600 font-mono transition-colors">
                       {companyDetails.mobile}
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-slate-950 text-[#05d9ff] shrink-0">
+                  <div className="p-2.5 rounded-xl bg-sky-400 text-black shrink-0 shadow-md">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 font-mono block">Email Address</span>
-                    <a href={`mailto:${companyDetails.email}`} className="text-sm font-bold text-slate-950 hover:text-cyan-700">
+                    <span className="text-xs text-black/70 font-mono font-bold block">Email Address</span>
+                    <a href={`mailto:${companyDetails.email}`} className="text-sm font-black text-black hover:text-sky-600 transition-colors">
                       {companyDetails.email}
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-slate-950 text-white shrink-0">
+                  <div className="p-2.5 rounded-xl bg-sky-400 text-black shrink-0 shadow-md">
                     <Globe className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 font-mono block">Official Website</span>
-                    <span className="text-sm font-bold text-slate-950 font-mono">
+                    <span className="text-xs text-black/70 font-mono font-bold block">Official Website</span>
+                    <span className="text-sm font-black text-black font-mono">
                       {companyDetails.website}
                     </span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-slate-950 text-amber-400 shrink-0">
+                  <div className="p-2.5 rounded-xl bg-sky-400 text-black shrink-0 shadow-md">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 font-mono block">Registered Office</span>
-                    <span className="text-xs font-semibold text-slate-900 block mt-0.5">
+                    <span className="text-xs text-black/70 font-mono font-bold block">Registered Office</span>
+                    <span className="text-xs font-bold text-black block mt-0.5">
                       {companyDetails.office}
                     </span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-slate-950 text-emerald-400 shrink-0">
+                  <div className="p-2.5 rounded-xl bg-sky-400 text-black shrink-0 shadow-md">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 font-mono block">Factory / Works</span>
-                    <span className="text-xs font-semibold text-slate-900 block mt-0.5">
+                    <span className="text-xs text-black/70 font-mono font-bold block">Factory / Works</span>
+                    <span className="text-xs font-bold text-black block mt-0.5">
                       {companyDetails.factory}
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-200">
-                <span className="text-xs font-mono text-slate-600 block">
-                  Tax Registration: <strong className="text-slate-950">{companyDetails.gstin}</strong>
+              <div className="pt-4 border-t border-sky-100">
+                <span className="text-xs font-mono text-black font-bold block">
+                  Tax Registration: <strong className="text-black">{companyDetails.gstin}</strong>
                 </span>
               </div>
             </GlassCard>
@@ -164,36 +161,36 @@ export default function Contact() {
 
           {/* Enquiry Form */}
           <div className="lg:col-span-7">
-            <GlassCard className="p-8 sm:p-10 bg-white/90 border border-slate-300">
+            <GlassCard className="p-8 sm:p-10 bg-white border border-sky-200 shadow-[0_12px_30px_-3px_rgba(14,165,233,0.2)]">
               {isSubmitted ? (
                 <div className="text-center py-12 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center mx-auto shadow-md">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-950 font-heading">
+                  <h3 className="text-2xl font-bold text-black font-heading">
                     Enquiry Transmitted Successfully
                   </h3>
-                  <p className="text-sm text-slate-700 max-w-md mx-auto">
-                    Thank you, <strong className="text-slate-950">{formData.fullName}</strong>. SRA Industries has received your message. You can also call us directly at <span className="font-mono font-bold text-cyan-800">{companyDetails.mobile}</span>.
+                  <p className="text-sm text-black max-w-md mx-auto font-medium">
+                    Thank you, <strong className="text-black">{formData.fullName}</strong>. SRA Industries has received your message. You can also reach our technical sales team directly at <span className="font-mono font-bold text-black">{companyDetails.mobile}</span>.
                   </p>
-                  <Button variant="outline" size="sm" onClick={() => setIsSubmitted(false)}>
+                  <Button variant="secondary" size="sm" onClick={() => setIsSubmitted(false)}>
                     Send Another Message
                   </Button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-950 font-heading">
+                    <h3 className="text-xl font-bold text-black font-heading">
                       Request BM Series Machinery Quotation
                     </h3>
-                    <p className="text-xs text-slate-600 mt-1">
+                    <p className="text-xs text-black/70 mt-1 font-medium">
                       Send your mineral type and required capacity for an exact machine recommendation.
                     </p>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5 font-mono">
+                      <label className="block text-xs font-black text-black uppercase tracking-wider mb-1.5 font-mono">
                         Full Name *
                       </label>
                       <input
@@ -202,13 +199,13 @@ export default function Contact() {
                         value={formData.fullName}
                         onChange={handleChange}
                         placeholder="Your Name"
-                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-[#05d9ff] focus:ring-1 focus:ring-[#05d9ff]"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-sky-200 text-black text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 font-medium shadow-sm"
                       />
-                      {errors.fullName && <p className="text-xs text-red-600 mt-1">{errors.fullName}</p>}
+                      {errors.fullName && <p className="text-xs text-red-600 mt-1 font-bold">{errors.fullName}</p>}
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5 font-mono">
+                      <label className="block text-xs font-black text-black uppercase tracking-wider mb-1.5 font-mono">
                         Contact Mobile *
                       </label>
                       <input
@@ -217,15 +214,15 @@ export default function Contact() {
                         value={formData.mobile}
                         onChange={handleChange}
                         placeholder="+91 98765 43210"
-                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-[#05d9ff] focus:ring-1 focus:ring-[#05d9ff]"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-sky-200 text-black text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 font-medium shadow-sm"
                       />
-                      {errors.mobile && <p className="text-xs text-red-600 mt-1">{errors.mobile}</p>}
+                      {errors.mobile && <p className="text-xs text-red-600 mt-1 font-bold">{errors.mobile}</p>}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5 font-mono">
+                      <label className="block text-xs font-black text-black uppercase tracking-wider mb-1.5 font-mono">
                         Email Address *
                       </label>
                       <input
@@ -234,20 +231,20 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="you@company.com"
-                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-[#05d9ff] focus:ring-1 focus:ring-[#05d9ff]"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-sky-200 text-black text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 font-medium shadow-sm"
                       />
-                      {errors.email && <p className="text-xs text-red-600 mt-1">{errors.email}</p>}
+                      {errors.email && <p className="text-xs text-red-600 mt-1 font-bold">{errors.email}</p>}
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5 font-mono">
+                      <label className="block text-xs font-black text-black uppercase tracking-wider mb-1.5 font-mono">
                         Target Mill Model
                       </label>
                       <select
                         name="millModel"
                         value={formData.millModel}
                         onChange={handleChange}
-                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-[#05d9ff]"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-sky-200 text-black text-sm focus:outline-none focus:border-sky-500 font-medium shadow-sm"
                       >
                         <option value="BM3">BM3 (3 Rollers • 12" • 100 kg - 1.5 T/hr)</option>
                         <option value="BM4">BM4 (4 Rollers • 12" • 300 kg - 2.5 T/hr)</option>
@@ -259,7 +256,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5 font-mono">
+                    <label className="block text-xs font-black text-black uppercase tracking-wider mb-1.5 font-mono">
                       Mineral Type & Target Fineness / Mesh *
                     </label>
                     <textarea
@@ -268,9 +265,9 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Specify mineral (e.g. Calcite, Dolomite, Barite, Limestone, Gypsum), feed size, moisture %, and required output mesh..."
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-[#05d9ff]"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-sky-200 text-black text-sm focus:outline-none focus:border-sky-500 font-medium shadow-sm"
                     ></textarea>
-                    {errors.message && <p className="text-xs text-red-600 mt-1">{errors.message}</p>}
+                    {errors.message && <p className="text-xs text-red-600 mt-1 font-bold">{errors.message}</p>}
                   </div>
 
                   <Button

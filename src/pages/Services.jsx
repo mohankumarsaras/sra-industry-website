@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Cog, 
   ArrowRight, 
-  CheckCircle2, 
   Sliders, 
-  Layers, 
-  Phone, 
-  Mail, 
   FileText 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -39,10 +34,10 @@ export default function Services() {
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           <button
             onClick={() => setSelectedModel('all')}
-            className={`px-5 py-2 rounded-xl text-xs font-bold tracking-wide transition-all cursor-pointer ${
+            className={`px-5 py-2.5 rounded-xl text-xs font-black tracking-wide transition-all cursor-pointer ${
               selectedModel === 'all'
-                ? 'bg-slate-950 text-[#00ffcc] shadow-md border border-slate-900'
-                : 'bg-white/80 text-slate-700 border border-slate-200 hover:bg-white'
+                ? 'bg-sky-400 text-black shadow-[0_4px_16px_rgba(56,189,248,0.4)] border border-sky-300'
+                : 'bg-white text-black border border-sky-200 hover:border-sky-400 shadow-sm'
             }`}
           >
             All Models (BM3, BM4, BM6, BM8)
@@ -51,10 +46,10 @@ export default function Services() {
             <button
               key={m.model}
               onClick={() => setSelectedModel(m.model)}
-              className={`px-5 py-2 rounded-xl text-xs font-bold tracking-wide transition-all cursor-pointer ${
+              className={`px-5 py-2.5 rounded-xl text-xs font-black tracking-wide transition-all cursor-pointer ${
                 selectedModel === m.model
-                  ? 'bg-slate-950 text-[#00ffcc] shadow-md border border-slate-900'
-                  : 'bg-white/80 text-slate-700 border border-slate-200 hover:bg-white'
+                  ? 'bg-sky-400 text-black shadow-[0_4px_16px_rgba(56,189,248,0.4)] border border-sky-300'
+                  : 'bg-white text-black border border-sky-200 hover:border-sky-400 shadow-sm'
               }`}
             >
               Model {m.model}
@@ -73,46 +68,46 @@ export default function Services() {
             >
               <GlassCard glow className="p-8 h-full flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-slate-200 mb-6">
+                  <div className="flex items-center justify-between pb-4 border-b border-sky-100 mb-6">
                     <div>
-                      <h3 className="text-3xl font-extrabold text-slate-950 font-heading">
+                      <h3 className="text-3xl font-extrabold text-black font-heading">
                         {item.model}
                       </h3>
-                      <span className="text-xs text-slate-600 font-medium">
+                      <span className="text-xs text-black/70 font-semibold">
                         Raymond-Type Roller Mill
                       </span>
                     </div>
-                    <span className="px-3.5 py-1.5 rounded-lg bg-slate-950 text-[#00ffcc] text-xs font-bold font-mono">
+                    <span className="px-3.5 py-1.5 rounded-lg bg-sky-100 text-black text-xs font-black font-mono border border-sky-300">
                       {item.rollerConfiguration}
                     </span>
                   </div>
 
                   {/* Specification Table */}
                   <div className="space-y-3.5 text-sm mb-6">
-                    <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                      <span className="text-slate-600">Roller Configuration</span>
-                      <span className="font-bold text-slate-950 font-mono">{item.rollerConfiguration}</span>
+                    <div className="flex justify-between items-center py-1.5 border-b border-sky-50">
+                      <span className="text-black/70 font-medium">Roller Configuration</span>
+                      <span className="font-bold text-black font-mono">{item.rollerConfiguration}</span>
                     </div>
-                    <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                      <span className="text-slate-600">Roll Size</span>
-                      <span className="font-bold text-slate-950 font-mono">{item.rollSize}</span>
+                    <div className="flex justify-between items-center py-1.5 border-b border-sky-50">
+                      <span className="text-black/70 font-medium">Roll Size</span>
+                      <span className="font-bold text-black font-mono">{item.rollSize}</span>
                     </div>
-                    <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                      <span className="text-slate-600">Bull Ring Size</span>
-                      <span className="font-bold text-slate-950 font-mono">{item.bullRingSize}</span>
+                    <div className="flex justify-between items-center py-1.5 border-b border-sky-50">
+                      <span className="text-black/70 font-medium">Bull Ring Size</span>
+                      <span className="font-bold text-black font-mono">{item.bullRingSize}</span>
                     </div>
-                    <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                      <span className="text-slate-600">Production Capacity</span>
-                      <span className="font-extrabold text-slate-950 font-mono text-cyan-800">{item.capacity}</span>
+                    <div className="flex justify-between items-center py-1.5 border-b border-sky-50">
+                      <span className="text-black/70 font-medium">Production Capacity</span>
+                      <span className="font-black text-sky-700 font-mono text-base">{item.capacity}</span>
                     </div>
-                    <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                      <span className="text-slate-600">Application</span>
-                      <span className="font-bold text-slate-950">{item.application}</span>
+                    <div className="flex justify-between items-center py-1.5 border-b border-sky-50">
+                      <span className="text-black/70 font-medium">Application</span>
+                      <span className="font-bold text-black">{item.application}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-3">
+                <div className="pt-4 border-t border-sky-100 flex flex-col sm:flex-row gap-3">
                   <Link to="/contact" className="flex-1">
                     <Button variant="primary" size="md" className="w-full" icon={ArrowRight}>
                       Inquire Model {item.model}
@@ -125,12 +120,12 @@ export default function Services() {
         </div>
 
         {/* Capacity Notes */}
-        <div className="p-6 rounded-2xl bg-white/90 border border-slate-300 shadow-sm max-w-4xl mx-auto mb-20 text-slate-800 text-sm leading-relaxed">
-          <h4 className="font-bold text-slate-950 mb-1 flex items-center gap-2">
-            <Sliders className="w-4 h-4 text-[#04b7d7]" />
+        <div className="p-6 rounded-2xl bg-white border border-sky-200 shadow-[0_8px_25px_rgba(14,165,233,0.15)] max-w-4xl mx-auto mb-20 text-black text-sm leading-relaxed">
+          <h4 className="font-bold text-black mb-1 flex items-center gap-2">
+            <Sliders className="w-4 h-4 text-sky-500" />
             Operating Capacity Guidance
           </h4>
-          <p>{capacityDisclaimer}</p>
+          <p className="text-black/85 font-medium">{capacityDisclaimer}</p>
         </div>
 
         {/* Complete Component Gallery from Catalogue */}
@@ -145,15 +140,15 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {catalogueGallery.map((img) => (
               <GlassCard key={img.id} interactive className="p-3">
-                <div className="rounded-xl overflow-hidden border border-slate-200 h-64 mb-3">
+                <div className="rounded-xl overflow-hidden border border-sky-200 h-64 mb-3 bg-white">
                   <img
                     src={img.image}
                     alt={img.title}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
-                <h4 className="font-bold text-slate-950 text-sm mb-1">{img.title}</h4>
-                <p className="text-xs text-slate-600">{img.caption}</p>
+                <h4 className="font-bold text-black text-sm mb-1">{img.title}</h4>
+                <p className="text-xs text-black/70 font-medium">{img.caption}</p>
               </GlassCard>
             ))}
           </div>

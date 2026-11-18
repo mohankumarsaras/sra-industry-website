@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Layers, Activity, CheckCircle2 } from 'lucide-react';
+import { Activity } from 'lucide-react';
 import GlassCard from '../components/common/GlassCard';
 
 export default function StatisticsSection() {
@@ -32,14 +32,14 @@ export default function StatisticsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 text-[#00ffcc] text-xs font-mono uppercase tracking-wider mb-3">
-            <Activity className="w-3.5 h-3.5 text-[#05d9ff]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-black text-xs font-mono font-bold uppercase tracking-wider mb-3 shadow-[0_4px_12px_rgba(56,189,248,0.25)] border border-sky-300">
+            <Activity className="w-3.5 h-3.5 text-sky-500" />
             BM Series Technical Scope
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-heading">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-black font-heading">
             Verified Catalogue Engineering Parameters
           </h2>
-          <p className="text-sm text-slate-700 mt-2 font-medium">
+          <p className="text-sm text-black/75 mt-2 font-medium">
             Exact machine parameters as manufactured and supplied by SRA Industries.
           </p>
         </div>
@@ -55,14 +55,14 @@ export default function StatisticsSection() {
             >
               <GlassCard className="text-center h-full flex flex-col justify-between py-8 px-6">
                 <div>
-                  <span className="block text-2xl sm:text-3xl font-extrabold text-slate-950 font-heading mb-2">
+                  <span className="block text-2xl sm:text-3xl font-extrabold text-black font-heading mb-2">
                     {item.metric}
                   </span>
-                  <span className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2 font-mono">
+                  <span className="block text-xs font-black text-black uppercase tracking-wider mb-2 font-mono">
                     {item.label}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed pt-3 border-t border-slate-200">
+                <p className="text-xs text-black/70 leading-relaxed pt-3 border-t border-sky-100 font-medium">
                   {item.detail}
                 </p>
               </GlassCard>

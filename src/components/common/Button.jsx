@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * High-clarity Buttons in Sky Blue with Black text / Black with Sky Blue shadows
+ */
 export default function Button({
   children,
   variant = 'primary',
@@ -10,36 +13,32 @@ export default function Button({
   ...props
 }) {
   const baseStyles =
-    'relative inline-flex items-center justify-center font-bold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer overflow-hidden group shadow-sm';
+    'relative inline-flex items-center justify-center font-bold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer overflow-hidden group';
 
   const variants = {
-    // Primary: High contrast dark navy with glowing cyan border/hover
+    // Primary: Sky Blue button with high-contrast Black text & Sky Blue glow shadow
     primary:
-      'bg-slate-950 hover:bg-slate-900 text-white hover:text-[#00ffcc] border border-slate-900 hover:border-[#05d9ff] shadow-md hover:shadow-lg focus:ring-slate-950',
+      'bg-sky-400 hover:bg-sky-300 text-black border border-sky-300 shadow-[0_8px_20px_-2px_rgba(56,189,248,0.5)] hover:shadow-[0_12px_28px_-2px_rgba(14,165,233,0.7)] hover:-translate-y-0.5 focus:ring-sky-400 font-extrabold',
 
-    // Cyan Gradient Accent
-    accent:
-      'bg-gradient-to-r from-[#05d9ff] to-[#00ffcc] text-slate-950 hover:from-[#04b7d7] hover:to-[#00e6b8] shadow-md hover:shadow-cyan-400/40 border border-white/50 focus:ring-cyan-400',
-
-    // Secondary: Translucent White Glass with crisp border
+    // Secondary: Pure White button with crisp Sky Blue border and Sky Blue shadow
     secondary:
-      'bg-white/80 hover:bg-white text-slate-900 border border-slate-300/80 hover:border-slate-400 shadow-sm focus:ring-slate-400 backdrop-blur-md',
+      'bg-white hover:bg-sky-50 text-black border-2 border-sky-300 hover:border-sky-500 shadow-[0_4px_14px_-2px_rgba(14,165,233,0.25)] hover:shadow-[0_8px_20px_-2px_rgba(14,165,233,0.4)] hover:-translate-y-0.5 focus:ring-sky-400',
 
-    // Glass: Pure glassmorphism
-    glass:
-      'glass-panel hover:bg-white text-slate-900 border border-white/90 hover:border-[#05d9ff] shadow-sm hover:shadow-md focus:ring-cyan-500',
+    // Sky Accent: Deep sky blue button with black text
+    accent:
+      'bg-sky-500 hover:bg-sky-400 text-black border border-sky-400 shadow-[0_8px_22px_-2px_rgba(14,165,233,0.55)] hover:-translate-y-0.5 focus:ring-sky-400 font-extrabold',
 
-    // Outline: Deep industrial border
+    // Outline: High contrast Black outline with sky blue hover
     outline:
-      'border-2 border-slate-900 text-slate-950 hover:bg-slate-950 hover:text-white bg-transparent focus:ring-slate-950',
+      'border-2 border-black text-black hover:bg-sky-400 hover:border-sky-400 hover:text-black shadow-[0_4px_12px_rgba(56,189,248,0.2)] focus:ring-sky-400',
 
-    // Ghost: Clean
+    // Ghost: Subtle hover
     ghost:
-      'text-slate-700 hover:text-slate-950 hover:bg-white/40 focus:ring-slate-400',
+      'text-black hover:bg-sky-100/80 focus:ring-sky-400',
   };
 
   const sizes = {
-    sm: 'text-xs px-3.5 py-1.5 gap-1.5',
+    sm: 'text-xs px-4 py-2 gap-1.5',
     md: 'text-sm px-5 py-2.5 gap-2',
     lg: 'text-base px-6 py-3.5 gap-2.5',
   };
@@ -50,11 +49,11 @@ export default function Button({
       {...props}
     >
       {Icon && iconPosition === 'left' && (
-        <Icon className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
+        <Icon className="w-4 h-4 transition-transform group-hover:-translate-x-0.5 text-black" />
       )}
-      <span>{children}</span>
+      <span className="text-black font-extrabold">{children}</span>
       {Icon && iconPosition === 'right' && (
-        <Icon className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+        <Icon className="w-4 h-4 transition-transform group-hover:translate-x-0.5 text-black" />
       )}
     </button>
   );
